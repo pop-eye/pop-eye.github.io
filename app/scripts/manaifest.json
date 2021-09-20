@@ -1,0 +1,11 @@
+{
+    "name": "Xcontrol",
+    "short_name": "notification",
+    "icons": [{
+          "src": "../images/badge.png",
+          "sizes": "192x192"
+        }],
+    "start_url": "./index.html?homescreen=1",
+    "display": "standalone",
+    "gcm_sender_id": "806266231795"
+  }

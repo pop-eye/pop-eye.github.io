@@ -206,7 +206,7 @@ scanButton.addEventListener("click", async () => {
     });
 
     ndef.addEventListener("reading", ({ message, serialNumber }) => {
-      console.log(`> Serial Number: ${serialNumber} <br />> Records: (${message.records.length})<br />> JSON: (${JSON.stringify(message)})`);
+      console.log(`> Serial Number: ${serialNumber} <br />> Records: (${JSON.stringify(message.records)})<br />)`);
     });
   } catch (error) {
     console.log("Argh! " + error);

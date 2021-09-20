@@ -47,7 +47,7 @@
   if (!("NDEFReader" in window))
   console.log(
     "Web NFC is not available.\n" +
-      'Please make sure the "Experimental Web Platform features" flag is enabled on Android.'
+      'Please use Chrome Android 89 or above.'
   );
 })();
 

@@ -48,6 +48,7 @@ scanButton.addEventListener("click", async () => {
     });
 
     ndef.addEventListener("reading", (event) => {
+      console.log("event = " + JSON.stringify(event));
       /*       console.log(
         `Serial Number: ${serialNumber} <br />> Records: (${JSON.stringify(
           message.records
@@ -55,14 +56,14 @@ scanButton.addEventListener("click", async () => {
       );
  */
       const message = event.message;
-      console.log("event = " + JSON.stringify(event));
+      console.log("serialNumber = " + event.serialNumber + " records = " + JSON.stringify(message.records));
       for (const record of message.records) {
         console.log(
-          "Record type:  " +
+          "\n Record type:  " +
             record.recordType +
-            "  MIME type:    " +
+            "\n  MIME type:    " +
             record.mediaType +
-            "  Record id:    " +
+            "\n  Record id:    " +
             record.id
         );
         switch (record.recordType) {
@@ -84,20 +85,17 @@ scanButton.addEventListener("click", async () => {
 
 writeButton.addEventListener("click", async () => {
   console.log("User clicked write button");
-
-  ndef
-    .write({
+  try {
+    await ndef.write({
       records: [
         { recordType: "url", data: "https://w3c.github.io/web-nfc/" },
         { recordType: "url", data: "https://web.dev/nfc/" },
       ],
-    })
-    .then(() => {
-      console.log("Message written.");
-    })
-    .catch((error) => {
-      console.log(`Write failed :-( try again: ${error}.`);
     });
+    console.log(`Message written!`);
+  } catch (error) {
+    console.log(`Write failed :-( try again: ${error}.`);
+  }
 
   /* try {
     const ndef = new NDEFReader();

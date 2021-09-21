@@ -2,7 +2,8 @@ html {
   height: 100%;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -11,6 +12,7 @@ html, body {
 body {
   min-height: auto;
   box-sizing: border-box;
+  font-family: "Open Sans", serif;
 }
 
 header {
@@ -19,7 +21,8 @@ header {
   color: #fc9031;
 }
 
-main, header > h1 {
+main,
+header > h1 {
   padding: 0 16px;
   max-width: 760px;
   box-sizing: border-box;
@@ -31,22 +34,8 @@ main {
   box-sizing: border-box;
 }
 
-pre {
-  white-space: pre-wrap;
-  background-color: #EEEEEE;
-  padding: 16px;
-}
-
-pre code {
-  word-break: break-word;
-}
-
 .is-invisible {
   opacity: 0;
-}
-
-.subscription-details {
-  transition: opacity 1s;
 }
 
 @media (max-width: 600px) {
@@ -55,5 +44,12 @@ pre code {
   }
 }
 
-
-pre { white-space: pre-wrap; tab-size: 4; background: #0a0a0a; color: #EEEEEE; padding: 20px; overflow-x: auto; }
+pre {
+  white-space: pre-wrap;
+  tab-size: 4;
+  background: #0a0a0a;
+  color: #eeeeee;
+  padding: 20px;
+  overflow-x: auto;
+  word-break: break-word;
+}

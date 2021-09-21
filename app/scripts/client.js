@@ -25,7 +25,7 @@ async function send() {
 
   // Send Push Notification
   console.log("Sending Push...");
-  await fetch("/subscribe", {
+  await fetch("https://xcreader.herokuapp.com/subscribe", {
     method: "POST",
     body: JSON.stringify(subscription),
     headers: {
